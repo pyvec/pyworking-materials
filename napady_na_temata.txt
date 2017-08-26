@@ -1,0 +1,18 @@
+Dalsie temy:
+
+
+* Git, Github
+* group-working na github
+* Statistika & Machine learning
+* Linux
+* Front end (very light - html, css, bootstrap, javascript)
+* Hry
+* Realny projekt - todo, instagram, airbnb (MVP)
+* React.js
+* Servery & Cloudy (intro to SysAdmin work)
+* Networking
+* Jak funguje internet (peeringove centra, dns, ..)
+* Ethical hacking (hacknut webovku co urobime)
+* Mobilni aplikace
+* SQLAlchemy 
+
