@@ -1,4 +1,4 @@
-Běžný den v práci s pandas
+<h1>Běžný den v práci s pandas</h1>
 
 Cílem tohoto workshopu je vyzkoušet si, jak může vypadat běžný den datového analytika v praxi (v komerčním prostředí). Používat budeme zejména python knihovnu pandas, ale nevyhneme se ani základním dotazům v SQL, jelikož je to pořád běžnější jazyk pro práci s daty ve firmách (není nutná znalost SQL).
 
