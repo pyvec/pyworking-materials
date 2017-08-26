@@ -1,4 +1,4 @@
-Dalsie temy:
+Další témata:
 
 
 * Git, Github
@@ -29,3 +29,5 @@ Machine learning
 Networking
 Specific application developement 
 Django, web
+
+<a href="https://pyworking-anketa.messa.cz/">Online anketa</a>
