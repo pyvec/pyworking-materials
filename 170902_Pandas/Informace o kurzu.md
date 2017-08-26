@@ -27,7 +27,7 @@ Na tomto úkolu si ukážeme, co by měl datový analytik pro svou práci vědě
 
 Z kurzu si kromě nabytých znalostí odnesete použitelnou šablonu pro ad hoc analýzu dat v pandas a seznam tolika odkazů na relevantní pracovní pozice, kolik se přihlásí účastníků :)
 
-Prerequesites: Notebook s nainstalovaným python 3, jupyter(ipython notebook) a pandas.
+Prerequesites: Notebook s nainstalovaným python 3, jupyter (ipython notebook) a pandas.
 (Jak nainstalovat ipython jupyter notebook: http://jupyter.readthedocs.io/en/latest/install.html#installing-jupyter-using-anaconda-and-conda
 Nebo pomoci pip install jupyter)
 
