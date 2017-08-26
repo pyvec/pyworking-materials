@@ -6,7 +6,7 @@ DB Pyworking – info k obsahu
 <li>Databázové principy: indexy, ACID, transakce </li>
 <li>Vše si prakticky ukážeme i na příkladech v Pythonu</li>
 <li>Abychom vše reálně použili, vytvoříme si jednoduchou webovou aplikaci ve Flasku pracující s databází SQLite</li>
-</il>
+</ul>
 
 
 
@@ -30,7 +30,8 @@ Todo web app anketa:
 * Bonus: zabránit dvojitému hlasování pomocí cookie, do které si uložíte nějakou náhodnou hodnotu, která pak bude identifikovat daného hlasujícího uživatele - http://flask.pocoo.org/docs/0.12/quickstart/#cookies 
 * Tip: nezapomenout na commit ;)
 
-Priklad - Kniznica
+
+<b>Priklad - Kniznica</b>
 
 * Clenove
 * id_clena
