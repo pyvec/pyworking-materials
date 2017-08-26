@@ -8,10 +8,11 @@ Na tomto úkolu si ukážeme, co by měl datový analytik pro svou práci vědě
 
 **Záklaldní osnova kurzu:**
 <ul>
-  <li>Krátká Teoretická část
-  <li>Seznámení s knihovnou pandas a běžnými funkcemi
-  <li>Výhody pandas oproti SQL
+<li>Krátká Teoretická část</li>
+<li>Seznámení s knihovnou pandas a běžnými funkcemi</li>
+<li>Výhody pandas oproti SQL</li>
 </ul>
+
 **Delší praktická část - Proces analýzy dat od začátku do konce**
 <ul>
   <li>Zadání, specifikace úkolu managementem 
