@@ -18,9 +18,10 @@ Podmínkou účasti je umět Python na úrovni začátečnického kurzu Pyladies
 
 
 <b>Organizátoři Praha:</b>
-
-Lenka Matějová 
-Pavlína Froňková
+<ul>
+<li>Lenka Matějová </li>
+<li>Pavlína Froňková</li>
+</ul>
 Pište na praha@pyladies.cz
 
 Budeme rádi, když se Pyworkingy rozšíří do dalších měst.
