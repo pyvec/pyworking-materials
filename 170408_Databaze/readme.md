@@ -33,7 +33,8 @@ Todo web app anketa:
 
 <b>Priklad - Kniznica</b>
 
-* Clenove
+Clenove
+
 * id_clena
 * Meno
 * Priezvisko
