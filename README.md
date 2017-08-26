@@ -8,13 +8,13 @@ Koná se ve frekvenci cca jednou za měsíc.
 
 <b>Jak Pyworking probíhá:</b>
 
-1) Jede se podle kouči připraveného tutotiálu - hezky je to třeba tady http://webkurz.pyladies.cz/lekce/2/flask.
+1) Jede se podle kouči připraveného tutotiálu - hezky je to třeba  <a href="http://webkurz.pyladies.cz/lekce/2/flask">k flasku</a>.
 2) Nebo se první část (do oběda) udělá výklad (nejčastěji prezentace) a po obědě coworking, kde si to všichni sami zkouší a pracují samostatně nebo ve skupinách a koučové případně dovysvětlí, když je to potřeba. Tento způsob se nám osvědčil pro Pyworking více.
 Moc dobře to fungovalo, když se domluvili dva koučové a jeden vysvětloval a druhý mu psal na terminál to, o čem mluvil (promítalo se to na plátno). Prima je také, když kouče napíše část jednoduché aplikace a účastníci ji doplní o probírané téma (takže nakonec funguje).  
 
 Nejčasteji se PyWorkingy konaly v MSD IT, v Praze na Smíchově.
  
-Podmínkou účasti je umět Python na úrovni začátečnického kurzu Pyladies http://pyladies.cz/praha/, mít nainstalovaný Python 3 a účet na githubu.
+Podmínkou účasti je umět Python na úrovni <a href="http://pyladies.cz/praha/">začátečnického kurzu Pyladies</a>, mít nainstalovaný Python 3 a účet na githubu.
 
 
 <b>Organizátoři Praha:</b>
@@ -22,6 +22,6 @@ Podmínkou účasti je umět Python na úrovni začátečnického kurzu Pyladies
 <li>Lenka Matějová </li>
 <li>Pavlína Froňková</li>
 </ul>
-Pište na praha@pyladies.cz
+Pište na <a href="mailto:praha@pyladies.cz">praha@pyladies.cz</a>
 
 Budeme rádi, když se Pyworkingy rozšíří do dalších měst.
