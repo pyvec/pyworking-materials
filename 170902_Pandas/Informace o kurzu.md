@@ -6,13 +6,13 @@ Workshop bude prakticky zaměřen, což znamená, že teoretické seznámení s 
 Hlavní část workshopu bude tvořit praktická část - vypracování fiktivního úkolu v pandas. Na tomto úkolu si procvičíme důležité fuknce z pandas pro čtení, čištění, vizualizaci (pro prezentaci) a zapisování dat do nových souborů i do databází.
 Na tomto úkolu si ukážeme, co by měl datový analytik pro svou práci vědět a čím může svůj management překvapit.
 
-Záklaldní osnova kurzu:
+**Záklaldní osnova kurzu:**
 <ul>
   <li>Krátká Teoretická část
   <li>Seznámení s knihovnou pandas a běžnými funkcemi
   <li>Výhody pandas oproti SQL
 </ul>
-Delší praktická část - Proces analýzy dat od začátku do konce
+**Delší praktická část - Proces analýzy dat od začátku do konce**
 <ul>
   <li>Zadání, specifikace úkolu managementem 
   <li>Návrh řešení úkolu na nečisto
