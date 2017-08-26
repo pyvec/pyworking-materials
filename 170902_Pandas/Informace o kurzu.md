@@ -6,19 +6,19 @@ Workshop bude prakticky zaměřen, což znamená, že teoretické seznámení s 
 Hlavní část workshopu bude tvořit praktická část - vypracování fiktivního úkolu v pandas. Na tomto úkolu si procvičíme důležité fuknce z pandas pro čtení, čištění, vizualizaci (pro prezentaci) a zapisování dat do nových souborů i do databází.
 Na tomto úkolu si ukážeme, co by měl datový analytik pro svou práci vědět a čím může svůj management překvapit.
 
-Záklaldní osnova kurzu:
-  Krátká Teoretická část
-  Seznámení s knihovnou pandas a běžnými funkcemi
-  Výhody pandas oproti SQL
-Delší praktická část - Proces analýzy dat od začátku do konce
-  Zadání, specifikace úkolu managementem 
-  Návrh řešení úkolu na nečisto
-  Exploratory Data Analysis
-  Čištění dat
-  Zpracování čistých dat
-  Vizualizace čistých dat
-  Uložení výsledků a úprava skriptu pro další použití
-  Tvorba reportu pro management
+*Záklaldní osnova kurzu:
+  *Krátká Teoretická část
+  *Seznámení s knihovnou pandas a běžnými funkcemi
+  *Výhody pandas oproti SQL
+*Delší praktická část - Proces analýzy dat od začátku do konce
+  *Zadání, specifikace úkolu managementem 
+  *Návrh řešení úkolu na nečisto
+  *Exploratory Data Analysis
+  *Čištění dat
+  *Zpracování čistých dat
+  *Vizualizace čistých dat
+  *Uložení výsledků a úprava skriptu pro další použití
+  *Tvorba reportu pro management
 
 Z kurzu si kromě nabytých znalostí odnesete použitelnou šablonu pro ad hoc analýzu dat v pandas a seznam tolika odkazů na relevantní pracovní pozice, kolik se přihlásí účastníků :)
 
