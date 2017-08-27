@@ -44,4 +44,4 @@ Na tomto úkolu si ukážeme, co by měl datový analytik pro svou práci vědě
 Počítač s nainstalovaným python 3, jupyter (ipython notebook) a pandas. (Jak nainstalovat ipython jupyter notebook: http://jupyter.readthedocs.io/en/latest/install.html#installing-jupyter-using-anaconda-and-conda Nebo pomoci pip install jupyter)
 
 **Poznámka:**
-Workshop bude veden v slovenštině/češtině, všechny skripty budou napsány v angličtině. Data do workshopu budou fiktivní (z oblasti banky nebo e-shopu) a svou logikou budou simulovat skutečná data z odvětví.
+Workshop bude veden v slovenštině/češtině, všechny skripty budou napsány v angličtině. Data do workshopu budou z oblasti otevřených dat a svou logikou budou simulovat skutečné data z praxe.
