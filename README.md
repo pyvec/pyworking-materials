@@ -1,6 +1,6 @@
 # pyworking-materials
 
-Pyworking je jednodenní "workshop" na téma spojené s programovacím jazykem Python. Téma obvykle vychází ze zájmu kouče/koučů.
+[Pyworking](https://pyworking.cz/) je jednodenní "workshop" na téma spojené s programovacím jazykem Python. Téma obvykle vychází ze zájmu kouče/koučů.
 
 Obvykle bývá v sobotu od 9:30 do 17:00 s hodinovou pauzou na oběd, večer se pak chodívá na pivo. 
 
