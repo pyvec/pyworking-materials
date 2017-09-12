@@ -39,3 +39,7 @@ Social engineering:
 Jak programovat sitove programy v Pythonu: https://docs.python.org/3/library/socket.html
 
 
+## Úloha: programování komunikace po síti
+
+V [tomto repozitáři](https://github.com/messa/talks/tree/master/2017-05-20_Pyworking-Internety) je ukázka chat serveru a klienta. Chat klient je pro větší jednoduchost rozdělen na dvě části - čtecí (pro čtení zpráv v chatu) a odesílací (pro zaslání nové zprávy).
+
