@@ -18,16 +18,16 @@ Další témata:
 
 Zájem je o (zdroj: lístečky od účastníků PyWorkingu):
 
-GIT, GITHUB (GroupWorking on GitHub, spolupráce v týmu) 
-Statistika ? řádu
-Front-end 2x
-React.js 
-Ethical hacking 
-realný projekt
-servery & cloudy
-Machine learning 
-Networking
-Specific application developement 
-Django, web
+* GIT, GITHUB (GroupWorking on GitHub, spolupráce v týmu) 
+* Statistika ? řádu
+* Front-end 2x
+* React.js 
+* Ethical hacking 
+* realný projekt
+* servery & cloudy
+* Machine learning 
+* Networking
+* Specific application developement 
+* Django, web
 
-<a href="https://pyworking-anketa.messa.cz/">Online anketa</a>
+[Online anketa](https://pyworking-anketa.messa.cz/)
