@@ -16,9 +16,9 @@ Zabránit se tomu dá nejlépe použitím tzv. frontendových frameworků, kter�
 Do Vue.js přepíšeme frontendovou část [ukázkové anketní aplikace pro Django](https://docs.djangoproject.com/en/1.11/intro/tutorial01/).
 
 ## Co se hodí umět
-* HTML (rozumět tagům `div`, `span`, `ul`, `li` a atributu `class`)
+* HTML (rozumět tagům `div`, `span`, `ul`, `li` a atributu `class`, zhruba v rozsahu http://webkurz.pyladies.cz/lekce/0/html)
 * CSS (umět použít selektory zhruba v rozsahu http://webkurz.pyladies.cz/lekce/0/css)
-* JavaScript (uložit něco do proměnné, vytvořit funkci, použít objekt a pole)
+* JavaScript (uložit něco do proměnné, vytvořit funkci, použít objekt a pole, zhruba v rozsahu http://webkurz.pyladies.cz/lekce/3/javascript)
 
 ## Co mít v notebooku
 * Python 3
