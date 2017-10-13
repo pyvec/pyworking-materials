@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Polls App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+</head>
+<body>
+<div class='content'>
+	<h1>{{ question.question_text }}</h1>
+
+	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+	<form action="{% url 'polls:vote' question.id %}" method="post">
+	{% csrf_token %}
+	{% static 'polls/images/' as images %}
+	{% for choice in question.choice_set.all %}
+		<div class='option'>
+		    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+		    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }} <img src="{{ images }}{{ choice.choice_text }}.png" /></label><br />
+		</div>
+	{% endfor %}
+	<input type="submit" value="Vote" />
+	</form>
+</div>
+</body>
+</html>

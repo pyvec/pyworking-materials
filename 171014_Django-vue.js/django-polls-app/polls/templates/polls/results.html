@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Polls App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+</head>
+<body>
+<div class='content'>
+	<h1>{{ question.question_text }}</h1>
+	<ul>
+	{% static 'polls/images/' as images %}
+	{% for choice in question.choice_set.all %}
+	    <li><img src="{{ images }}{{ choice.choice_text }}.png" /> -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+	{% endfor %}
+	</ul>
+	<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+</div>
+</body>
+</html>

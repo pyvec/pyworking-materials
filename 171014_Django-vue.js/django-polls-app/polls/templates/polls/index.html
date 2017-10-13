@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Polls App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+</head>
+<body>
+<div class='content'>
+    <h1>Django Polls App</h1>
+    {% if latest_question_list %}
+            <ul>
+            {% for question in latest_question_list %}
+                <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% endfor %}
+            </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+</div>
+</body>
+</html>

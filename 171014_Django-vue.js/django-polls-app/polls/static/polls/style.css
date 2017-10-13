@@ -1,0 +1,40 @@
+body {
+    font-size: 20px;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+.content {
+	margin: 0 auto;
+	width: 400px;
+}
+
+li {
+	padding-top: 20px;
+}
+
+li a {
+    color: green;
+}
+
+.option {
+	margin-top: 30px;
+}
+
+input[type="submit"] {
+	margin-top: 20px;
+	width: 400px;
+}
+
+label {
+	width: 400px;
+}
+
+img {
+	width: 30px;
+	height: 30px;
+	vertical-align: top;
+}
+
+label > img {
+	float: right;
+}
