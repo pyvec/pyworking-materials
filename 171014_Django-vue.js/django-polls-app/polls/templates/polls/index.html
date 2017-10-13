@@ -8,17 +8,22 @@
     <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 </head>
 <body>
-<div class='content'>
-    <h1>Django Polls App</h1>
-    {% if latest_question_list %}
-            <ul>
-            {% for question in latest_question_list %}
-                <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-            {% endfor %}
-            </ul>
-    {% else %}
-        <p>No polls are available.</p>
-    {% endif %}
-</div>
+    <div id='app'>
+        <page-content headline='Django Polls App'>
+            {% if latest_question_list %}
+                    <ul>
+                    {% for question in latest_question_list %}
+                        <question url="{% url 'polls:detail' question.id %}" text="{{ question.question_text }}"></question>
+                    {% endfor %}
+                    </ul>
+            {% else %}
+                <p>No polls are available.</p>
+            {% endif %}
+        </page-content>
+    </div>
+    <!-- link vue -->
+    <script src="https://unpkg.com/vue"></script>
+    <!-- link our javascript with Vue components -->
+    <script type="text/javascript" src="{% static 'polls/polls.js' %}"></script>
 </body>
 </html>
