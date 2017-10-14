@@ -13,7 +13,7 @@
 	<ul>
 	{% static 'polls/images/' as images %}
 	{% for choice in question.choice_set.all %}
-	    <li><img src="{{ images }}{{ choice.choice_text }}.png" /> -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+	    <li><img src="{{ images }}{{ choice.choice_text|lower }}.png" /> -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
 	{% endfor %}
 	</ul>
 	<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
