@@ -19,7 +19,7 @@
 	{% for choice in question.choice_set.all %}
 		<div class='option'>
 		    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-		    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }} <img src="{{ images }}{{ choice.choice_text }}.png" /></label><br />
+		    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }} <img src="{{ images }}{{ choice.choice_text|lower }}.png" /></label><br />
 		</div>
 	{% endfor %}
 	<input type="submit" value="Vote" />
