@@ -22,5 +22,5 @@ Do Vue.js přepíšeme frontendovou část [ukázkové anketní aplikace pro Dja
 
 ## Co mít v notebooku
 * Python 3
-* Funkční Django aplikaci podle https://docs.djangoproject.com/en/1.11/intro/tutorial01/; zdrojové kódy budou k dispozici na https://github.com/pyvec/pyworking-materials/tree/master/171014_Django-vue.js
+* Funkční Django aplikaci podle https://docs.djangoproject.com/en/1.11/intro/tutorial01/ ; zdrojové kódy budou k dispozici na https://github.com/pyvec/pyworking-materials/tree/master/171014_Django-vue.js
 * Oblíbený editor/IDE na psaní HTML a Pythonu (do většiny editorů existují rozšíření pro zvýraznění syntaxe Vue.js)
