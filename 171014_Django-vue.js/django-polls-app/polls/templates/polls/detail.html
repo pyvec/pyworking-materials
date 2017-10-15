@@ -8,22 +8,31 @@
     <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 </head>
 <body>
-<div class='content'>
-	<h1>{{ question.question_text }}</h1>
-
-	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
-	<form action="{% url 'polls:vote' question.id %}" method="post">
-	{% csrf_token %}
-	{% static 'polls/images/' as images %}
-	{% for choice in question.choice_set.all %}
-		<div class='option'>
-		    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-		    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }} <img src="{{ images }}{{ choice.choice_text }}.png" /></label><br />
-		</div>
-	{% endfor %}
-	<input type="submit" value="Vote" />
-	</form>
-</div>
+	<div id='app'>
+		<page-content headline="{{ question.question_text }}" v-bind:is-error="isError" v-bind:error-message="errorMessage">
+			<vote-form v-bind:choices="choices" action="{% url 'polls:vote' question.id %}" token="{{ csrf_token }}"></vote-form>
+		</page-content>
+	</div>
+    <!-- link vue -->
+    <script src="https://unpkg.com/vue"></script>
+    <!-- link our javascript with Vue components -->
+    <script type="text/javascript" src="{% static 'polls/polls.js' %}"></script>
+    <!-- let javascript know about our objects -->
+    <script type="text/javascript">
+    	{% static 'polls/images/' as images %}
+    	{% if error_message %}
+    		app.errorMessage = '{{ error_message }}'
+    		app.isError = true
+    	{% endif %}
+    	{% for choice in question.choice_set.all %}
+	        var choice = {
+	        	imagePath: "{{ images }}{{ choice.choice_text }}.png",
+	        	text: "{{ choice.choice_text }}",
+	            votes: "{{ choice.votes }} vote{{ choice.votes|pluralize }}",
+	            id: "{{ choice.id }}",
+	        };
+	        app.choices.push(choice)
+        {% endfor %}	
+    </script>
 </body>
 </html>
