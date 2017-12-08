@@ -25,15 +25,16 @@ Instalace & nastavení – viz [začátečnický kurz](http://naucse.python.cz/c
 Budeš-li mít před workshopem trochu času, založ si předem účty u těchto služeb (pokud je ještě nemáš):
 
 * https://github.com
-* https://travis-ci.org/
-* https://www.appveyor.com/
+* https://travis-ci.org/ (pihlášení přes GitHub)
+* https://www.appveyor.com/ (pihlášení přes GitHub)
+* https://admin.fedoraproject.org/accounts/user/new
 
 ### Knihovny z PyPI
 
 Pro urychlení instalace si ve virtuálním prostředí nainstaluj následující:
 
 ```console
-$ python -m pip install pyinstaller pyglet PyQt5
+$ python -m pip install pyinstaller pyglet PyQt5 importlib-resources travis-encrypt
 ```
 
 ### Program k zabalení
