@@ -12,3 +12,36 @@ Ukážeme si jak napsat jednoduchý [*GUI*](https://cs.wikipedia.org/wiki/Grafic
 a možná další...
 
 
+## Co budeš potřebovat
+
+* Python 3.6
+* Git
+* Programátorský editor
+
+Instalace & nastavení – viz [začátečnický kurz](http://naucse.python.cz/course/pyladies/sessions/install/).
+
+### Účty na webových službách
+
+Budeš-li mít před workshopem trochu času, založ si předem účty u těchto služeb (pokud je ještě nemáš):
+
+* https://github.com
+* https://travis-ci.org/
+* https://www.appveyor.com/
+
+### Knihovny z PyPI
+
+Pro urychlení instalace si ve virtuálním prostředí nainstaluj následující:
+
+```console
+$ python -m pip install pyinstaller pyglet PyQt5
+```
+
+### Program k zabalení
+
+* Máš-li Asteroidy ze začátenického kurzu, dej je do Gitu; můžeš pracovat s nimi!
+
+* Pro tvorbu "okýnkové" aplikace si nainstaluj Qt Designer:
+  * Fedora: `sudo dnf install qt5-designer`
+  * Debian: `sudo apt-get install qttools5-dev-tools`
+  * Mac: `brew install qt5; brew linkapps qt5`
+  * Windows: [z instalátoru](https://www.qt.io/download-open-source/#section-2)
