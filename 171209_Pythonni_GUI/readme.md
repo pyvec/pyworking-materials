@@ -48,6 +48,34 @@ $ python -m pip install pyinstaller pyglet PyQt5 importlib-resources travis-encr
   * Mac: `brew install qt5; brew linkapps qt5`
   * Windows: [z instalátoru](https://www.qt.io/download-open-source/#section-2)
 
+> [warning]
+> Instalační postup na Macu je pochybný, víme o lepším?
+> Podle diskuze s Honzou:
+>
+> ```console
+> $ brew linkapps qt5
+> Warning: `brew linkapps` has been deprecated and will eventually be removed!
+> Unfortunately `brew linkapps` cannot behave nicely with e.g. Spotlight using
+> either aliases or symlinks and Homebrew formulae do not build "proper" `.app`
+> bundles that can be relocated. Instead, please consider using `brew cask` and
+> migrate formulae using `.app`s to casks.
+> Linking: /usr/local/opt/qt/libexec/Assistant.app
+> Linking: /usr/local/opt/qt/libexec/Designer.app
+> Linking: /usr/local/opt/qt/libexec/pixeltool.app
+> Linking: /usr/local/opt/qt/libexec/qdbusviewer.app
+> Linking: /usr/local/opt/qt/libexec/qml.app
+> Linking: /usr/local/opt/qt/libexec/Linguist.app
+> Linked 6 apps to /Applications
+> ```
+>
+> qt5 by mělo používat `brew cask` a ne `brew`, protože to pak dělá problémy:
+> když dám `brew uninstall qt5` tak mi žádnej designer nezmizí;
+> musím jít do Applications a ty linky ručně pomazat.
+> Ale ty původní binárky se odinstalovaly dobře
+>
+> Podle mě to musí opravit qt5, mělo by se distribuovat jako *cask*,
+> tedy grafická aplikace, ne jako command line tool.
+
 
 ## Ukázkový program
 
@@ -675,11 +703,21 @@ commit, push, magic, check Artefacts tab
 
 XXX
 
-get OAuth token
+Je potřeba si na github.com vygenerovat pro Travis
+[Personal access token](https://github.com/settings/tokens)
+s právem `public_repo`, pak ho zašifrovat pomocí:
 
 ```console
-$ python -m travis USERNAME REPOSITORY
+$ pythomn -m pip install travis-encrypt
+$ python -m travis <JMENO> kalkulacka
 ```
+
+Za `<JMENO>` doplň své uživatelské jméno na GitHubu,
+a za `kalkulacka` jméno repozitáře.
+
+Pak povolit repozitář na Travis CI.
+
+Pak do `.travis.yml` napsat:
 
 ```yaml
 language: python
@@ -694,13 +732,13 @@ matrix:
 
 install:
   - python3 -m pip install --upgrade pip
-  - python3 -m pip install pyglet pytest pyinstaller
+  - python3 -m pip install PyQt5 pytest pyinstaller
 
 script:
   - python3 -m pytest -vv test_kalkulacka/
   - pyinstaller __main__.py -n kalkulacka-app
       --exclude-module tkinter
-      --add-data dama/resources:dama/resources
+      --add-data kalkulacka:kalkulacka
       -F -w
 
 deploy:
@@ -723,6 +761,8 @@ radši spíš ty sdisty na PyPI
 
 ## Travis CI pro Mac
 
+XXX
+
 ```yaml
 language: python
 sudo: false
@@ -742,13 +782,13 @@ install:
         brew install python3
     fi
   - python3 -m pip install --upgrade pip
-  - python3 -m pip install pyglet pytest pyinstaller importlib_resources
+  - python3 -m pip install PyQt5 pytest pyinstaller importlib_resources
 
 script:
   - python3 -m pytest -vv test_kalkulacka/
   - pyinstaller __main__.py -n kalkulacka-app
       --exclude-module tkinter
-      --add-data dama/resources:dama/resources
+      --add-data kalkulacka:kalkulacka
       -F -w
   - |
     if [[ "$(uname -s)" == 'Darwin' ]]; then
