@@ -78,7 +78,7 @@ několik druhů a my se nyní zaměříme na testy jednotkové a a testy integra
    Často bývá složitější je připravit, ale nevyžadují větší zásahy do struktury programu.
 
 **Poznámka:** *Existuje vědní disciplína, která se zabývá dokazováním toho,
-že výsledek programu musí bát správný. Tou se ale dnes zabývat nebudeme.*
+že výsledek programu musí být správný. Tou se ale dnes zabývat nebudeme.*
 
 ## Funkce jako základní stavební kámen programu
 
@@ -356,7 +356,7 @@ else:
 
 
 Pozor na to, že naše testy se vložením kódu hlavního programu rozbijí.
-Při importování `rps` se kód provede. Aby se to nestalo, vyhadíme si na program
+Při importování `rps` se kód provede. Aby se to nestalo, vyhradíme si na program
 vlastní *nerozumnou* funkci. Funkci s hlavním programem často nazýváme `main`.
 Tuto funkci zavoláme pouze, když je náš soubor spouštěn, ale ne když je importován.
 
