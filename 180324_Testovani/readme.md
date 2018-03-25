@@ -35,7 +35,7 @@ Pro urychlení instalace si ve virtuálním prostředí nainstaluj následujíc�
 ## Funguje program správně?
 
 Začneme na jednoduchém příkladu, na hře kámen, nůžky, papír. Nejprve napíšeme
-jednoduchý program, který nám umožní hrát prosti počítači. Napíšeme ho velmi naivně,
+jednoduchý program, který nám umožní hrát proti počítači. Napíšeme ho velmi naivně,
 bez použití funkcí a jiných vymožeností, což by zkušené programátorky a programátory
 ani nenapadlo, ale začátečníci to udělají nějak takhle.
 
