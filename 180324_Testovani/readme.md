@@ -586,6 +586,8 @@ def test_wrong_play_results_in_repeated_question():
     assert cp.stdout.count('rock, paper or scissors?') == 2
 ```
 
+> Pokud se na Windows setkáte s `UnicodeDecodeError` zkuste nastavit `encoding='cp1250'` místo `encoding='utf-8'` v `subprocess.run`.
+
 Výhodou tohoto přístupu je, že nemusíte řešit vstup a výstup žádnými podvody,
 modul `subprocess` je na to připraven. (Kdo se nyní nudí, udělá fixture, kterou může
 použít ve více testech.)
