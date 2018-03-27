@@ -487,7 +487,7 @@ Několik poznámek:
  * Normální funkce `input` vypíše otázku, my tedy ve falešné funkci musíme udělat to samé.
  * `monkeypatch` umí nastavit atribut modulu. Pro zabudované
    funkce se použije `'builtins.název'`, ale pro věci, které importujete,
-   použijete např. `'random.choise'`.
+   použijete např. `'random.choice'`.
  * Nedoporučuje se monkeypatchovat některé speciální funkce, které může používat
    samotný pytest. Monkeypatchování je nebezpečné.
 
