@@ -32,5 +32,17 @@ potřebné závislosti:
 
 ```console
 $ python -m pip install --upgrade pip
-$ python -m pip install notebook numpy pillow
+$ python -m pip install notebook numpy pillow ipywidgets
 ```
+
+## Materiály
+
+* [Jupyter Notebook](https://naucse.python.cz/course/mi-pyt/intro/notebook/)
+* [Soubory](soubory.md)
+* [`pathlib.Path`: práce se soubory a cestami](pathlib.ipynb)
+  * [Archiv](archiv.tar.gz)
+  * [Tahák na soubory](https://pyvec.github.io/cheatsheets/pathlib/pathlib-cs.pdf)
+* [Teorie barev](barvy.ipynb)
+  * [pomocný modul `mix_demo`](mix_demo.py)
+* [NumPy](https://naucse.python.cz/course/mi-pyt/intro/numpy/)
+  * [Tahák na NumPy](https://pyvec.github.io/cheatsheets/numpy/numpy-cs.pdf)
