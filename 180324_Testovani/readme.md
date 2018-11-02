@@ -2,6 +2,8 @@
 
 24.3.2018 se koná Pyworking na téma Testování od Mira Hrončoka v Apiary v Karlíně.
 
+3.11.2018 se koná znovu v rámci konference OpenAlt v Brně.
+
 ## Co očekávat?
 
 Workshop pro ty, kdo umí Python zhruba na úrovni [začátečnického kurzu pro PyLadies](http://naucse.python.cz/course/pyladies/), ale z testování jsou spíše zmatení nebo o něm příliš nevědí.
@@ -16,7 +18,7 @@ Pokud zbude čas, můžeme se podívat i na další věci, například jak integ
 
 ## Co budeš potřebovat
 
-* Python 3.6
+* Python 3.6 nebo 3.7
 * Git
 * Textový editor
 * Příkazovou řádku
