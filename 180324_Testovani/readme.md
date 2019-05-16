@@ -4,6 +4,8 @@
 
 3.11.2018 se koná znovu v rámci konference OpenAlt v Brně.
 
+18.5.2019 se koná opět v Apiary v Karlíně, pro účastnice kurzů PyLadies.
+
 ## Co očekávat?
 
 Workshop pro ty, kdo umí Python zhruba na úrovni [začátečnického kurzu pro PyLadies](http://naucse.python.cz/course/pyladies/), ale z testování jsou spíše zmatení nebo o něm příliš nevědí.
