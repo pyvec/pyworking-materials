@@ -122,7 +122,7 @@ pokud tento text čtete doma, odkážu vás na
 [lekci o testování ze začátečnického kurzu](http://naucse.python.cz/course/pyladies/beginners/testing/).
 Pomocí `assert` zde říkáme: „ujisti se, že (něco platí)“.
 
-```
+```python
 # test_shapes.py
 
 import math
