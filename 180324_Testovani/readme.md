@@ -688,10 +688,11 @@ Do repozitáře přidejte soubor `.travis.yml`:
 
 ```yaml
 language: python
+dist: xenial
 python:
-- '3.6'
+- '3.7'
 install:
-- python -m pip install pytest
+- python -m pip install -U pytest
 script:
 - python -m pytest test_rps.py
 ```
