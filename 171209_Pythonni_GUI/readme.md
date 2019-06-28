@@ -1,4 +1,9 @@
-# Distribuce Pythonních aplikací
+Workshop se koná:
+
+* 9. 12. 2017 v Apiary v Praze
+* 29. 6. 2019 na FI MUNI v Brně
+
+# GUI & Distribuce Pythonních aplikací
 
 Máš napsaný program, teď ho stačí jen dostat k uživatelům. Ale jak?
 Webovou aplikaci nasadíš na server; program, který má běžet na počítači
@@ -108,7 +113,7 @@ klikni „Create”.
 
 Poté nastrkej na okno uprostřed několik ovládacích prvků, podle obrázku:
 
-   ![Obrázek úvodního okýnka Designeru](static/designer-dragging.png)
+   ![Obrázek úvodního okýnka Designeru](static/designer-dragging.svg)
 
 Pak v menu vyber *Form* – *Lay Out in a Grid*.
 Tím se prvky urovnají. Kdyby se neurovnaly správně, popřesunuj je myší.
@@ -116,6 +121,8 @@ Tím se prvky urovnají. Kdyby se neurovnaly správně, popřesunuj je myší.
 Potom postupně poklikej na funkční prvky, a každému nastav
 vlastnosti v *Property Editor*:
 
+* Samotné okno *Dialog*:
+    * *windowTitle* na `Kalkulačka`
 * První číslo:
     * *objectName* na `sb_operand1`
 * Vybírací políčko: ![](static/designer-combobox.png)
@@ -127,15 +134,13 @@ vlastnosti v *Property Editor*:
 * Třetí číslo:
     * *objectName* na `sb_result`
     * *readOnly* zaškrtnout
-* Samotné okno *Dialog*:
-    * *windowTitle* na `Kalkulačka`
+
+   ![Obrázek úvodního okýnka Designeru](static/designer-properties.svg)
 
 Pak vyber všechna tři políčka pro čísla (s <kbd>Ctrl</kbd>) a nastav jim:
 
 * *minimum* na `-99999.99`
 * *maximum* na `99999.99`
-
-   ![Obrázek úvodního okýnka Designeru](static/designer-properties.png)
 
 Poté dvakrát klikni na vybírací políčko ![](static/designer-combobox.png)
 pomocí tlačítka *+* přidej 4 prvky, a postupně je přepiš na
@@ -228,7 +233,7 @@ Pro kalkulačku chceme mít následující soubory:
 
 ```plain
 + README
-+ LICENSE
++ LICENCE
 + kalkulacka/
   + __main__.py
   + __init__.py
@@ -240,14 +245,15 @@ Do `README` dej popisek.
 Tento soubor se ukáže návštěvníkům na GitHubu;
 měl by ideálně obsahovat informace o tom, jak se projekt naklonuje, nainstaluje,
 spustí či otestuje.
+Zatím tam stačí dát jen jméno projektu: `Kalkulačka`.
 
-Do `LICENSE` zkopíruj text [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.txt).
+Do `LICENCE` zkopíruj text [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.txt).
 Projekty používající PyQT musí být šířeny pod touto licencí.
 (Balíš-li hru, nebo jiný projekt který nepoužívá PyQt5, soubor LICENCE zatím
 nezakládej.)
 
 Šablonu `kalkulacka.ui` přesuň do adresáře `kalkulacka`.
-(U hry přesuň jiné použité soubory – obrázky.)
+(U hry přesuň jiné použité soubory – třeba obrázky.)
 
 V `kalkulacka/__init__.py` bude rozhraní balíčku:
 
@@ -286,26 +292,31 @@ archiv, který Python umí přímo spustit.
 Na jeho vytvoření použijeme nástroj `zipapp`, který je součástí Pythonu:
 
 ```console
-$ python -m zipapp . -o kalkulacka.pyz --main kalkulacka:main
+$ python -m zipapp . -o ../kalkulacka.pyz --main kalkulacka:main
 ```
 
 Co to znamená?
 
 * `python -m zipapp`: Pythone, spusť modul `zipapp` s těmito volbami:
 * `.`: zabal aktuální adresář,
-* `-o kalkulacka.pyz`: výsledek dej do souboru `kalkulacka.pyz`,
+* `-o ../kalkulacka.pyz`: výsledek dej do souboru `kalkulacka.pyz`
+  v *nadřazeném adesáři*,
 * `--main kalkulacka:main`: a zařiď, aby se po spuštění zavolala funkce `main`
   z modulu `kalkulacka`.
 
 > [warning]
-> Tento příkaz zazipuje celý aktuální adresář!
-> Když budeš chtít archiv vytvořit znovu, smaž předtím výsledný soubor,
-> `kalkulacka.pyz`, aby se ti starý archiv nepřidal do toho nového.
+> Tento příkaz uloží soubor do nadřazeného adresáře – existuje-li v něm už
+> jiný soubor `kalkulacka.pyz`, přepíše ho.
+> Proč to děláme? Kdybychom zazipovaný soubor dali do aktuálního adresáře –
+> toho, který zazipováváme – musel by archiv obsahoval sám sebe.
+> To nejde: v takovém případě dostaneš chybu, nebo bude archiv v archivu
+> ze začátku chybět, nebo se dokonce bude archiv přidávat tak dlouho, až
+> ti dojde místo na disku.
 
 Až to budeš mít, spusť:
 
 ```console
-$ python kalkulacka.pyz
+$ python ../kalkulacka.pyz
 ```
 
 Funguje? Mělo by!
@@ -334,7 +345,7 @@ Tím vytvoříš „zamospouštěcí“ archiv, který má „shebang“ – inf
 že se má spouštět pomocí Pythonu. Pro spuštění pak můžeš psát jen:
 
 ```console
-$ ./kalkulacka.pyz
+$ ../kalkulacka.pyz
 ```
 
 … nebo archiv zkopírovat do adresáře, ve kterém máš spustitelné soubory,
@@ -343,6 +354,7 @@ a pouštět ho jenom jménem. Na některých Linuxech to jde takto:
 ```console
 $ cp kalkulacka.pyz ~/.local/bin/kalkulacka
 $ kalkulacka
+$ rm ~/.local/bin/kalkulacka   # smazání příkazu
 ```
 
 
@@ -353,13 +365,12 @@ Zkus si udělat nový adresář, přepnout se do něj, a spustit náš archiv
 (z teď už nadřazeného adresáře):
 
 ```console
-$ mkdir test_dir
-$ cd test_dir
-$ python ../kalkulacka.pyz
+$ cd ..
+$ python kalkulacka.pyz
 ```
 
 Dostaneš chybu: kód se snaží otevřít soubor `kalkulacka/kalkulacka.ui`,
-což je cesta, která závisí na aktuálním adresáři.
+což je relativní cesta, která závisí na aktuálním adresáři.
 
 Náš archiv sice ten datový soubor obsahuje, ale program se pro něj do archivu
 nedívá!
@@ -371,15 +382,15 @@ Do takového prostředí pak dáš jen archiv, který chceš šířit ostatním,
 a můžeš mít (větší) jistotu, že ten archiv nezávisí na nějakých věcech kolem.
 
 
-## Načítání souborů a pkg_resources
+## Načítání souborů a importlib.resources
 
 Jak to zařídit, aby se program díval na *svoje* soubory?
-Existuje modul `pkg_resources`, který umí otevřít soubor, který leží „vedle”
+Existuje modul `importlib.resources`, který umí otevřít soubor, který leží „vedle”
 Pythonního modulu.
 A je jedno, jestli je to normální `.py` soubor, nebo jestli je ze zazipovaného
 archivu.
 
-Jak na to? V kódu, který otevírá soubory, naimportuj `pkg_resources`,
+Jak na to? V kódu, který otevírá soubory, naimportuj `importlib.resources`,
 a pak místo:
 
 ```python
@@ -390,13 +401,21 @@ with open('kalkulacka/kalkulacka.ui', encoding='utf-8') as f:
 piš:
 
 ```python
-with pkg_resources.resource_stream('kalkulacka', 'kalkulacka.ui') as f:
-    ...
+with importlib.resources.open_text('kalkulacka', 'kalkulacka.ui') as f:
+    window = uic.loadUi(f)
 ```
+
+> [note] Python 3.6 a nižší
+> Modul `importlib.resources` byl přidán do Pythonu 3.7.
+> Pro starší verze existuje `importlib_resources` (s podtržítkem místo tečky).
+> Máš-li starší Python, tak si tenhle modul nainstaluj
+> (`python -m pip install importlib_resources`) a v kódu nahraď
+> tečky za podtržítka.
 
 Jméno souboru se rozdělilo na dvě části: `'kalkulacka'` je jméno Pythonního
 modulu, t.j. to, co by se psalo za `import`.
-A `kalkulacka.ui` je jméno souboru, který leží „vedle“ souboru s tím modulem.
+A `kalkulacka.ui` je jméno souboru, který leží „vedle“ souboru s tím modulem,
+v našem případě vedle `__init__.py`.
 
 ### Dočasné rozbalení
 
@@ -412,25 +431,25 @@ spritesheet = pyglet.image.load('dama/spritesheet.png')
 
 U zazipovaného archivu máme problém: ten soubor na disku vůbec není,
 nejde normálně otevřít.
-Naštěstí `pkg_resources` umožňuje soubor dočasně z archivu vybalit,
+Naštěstí `importlib.resources` umožňuje soubor dočasně z archivu vybalit,
 a dát cestu použitelnou s `open` a podobnými funkcemi.
-Jen je potřeba dočasně vybalené soubory zase uklidit:
+Jen je potřeba dočasně vybalené soubory zase uklidit, o což se postará
+blok `with`:
 
 ```python
 # Dočasené vybalení
-path = pkg_resources.resource_filename('dama', 'spritesheet.png')
+with importlib.resources.path('dama', 'spritesheet.png') as path:
+    # `path` je cesta k rozbalenému souboru, který se po ukončení bloku
+    # `with` automaticky smaže
 
-# Načtení obrázku
-spritesheet = pyglet.image.load(path)
-
-# Úklid (po tomto soubor v `path` přestane existovat!)
-pkg_resources.cleanup_resources()
+    # Načtení obrázku
+    spritesheet = pyglet.image.load(str(path))
 ```
 
 ### Kdy to použít?
 
-Trik s `pkg_resources` je potřeba použít jen pro soubory, které jsou součástí
-tvé aplikace – obrázky, šablony, soubory s překlady, a tak podobně.
+Trik s `importlib.resources` je potřeba použít jen pro soubory, které jsou
+součástí tvé aplikace – obrázky, šablony, soubory s překlady, a tak podobně.
 
 Jiné soubory – např. ty, které bude načítat a ukládat tvůj textový editor,
 nebo dočasné soubory a jiné které tvůj program *mění* – by měly používat
@@ -445,14 +464,6 @@ Tento návod ale ukazuje, jak se se soubory dá pracovat z *jakéhokoli*
 Pythonního programu.
 
 
-> [note]
-> Modul `pkg_resources` je velice užitečný, ale taky celkem starý a nemotorný.
-> Vzniká jeho náhrada, 
-> [`importlib_resources`](http://importlib-resources.readthedocs.io/en/latest/),
-> která za pár měsíců snad bude dost vyladěná pro normální použití.
-> Čteš-li tento text v roce 2018 (či později), koukni na tamější dokumentaci!
-
-
 ## PyPI a balíčky sdist
 
 Archiv `.pyz` je zajímavá věc, ale přece jen je to spíš taková hračka.
@@ -462,32 +473,30 @@ nainstalovaný nejen Python, ale i závislosti tvé aplikace
 
 Jde to i tak, aby uživatel mohl mít nainstalovaný *jenom* Python, a aby se tvá
 aplikace dala instalovat pomocí `python -m pip install`.
-Používá se to spíš než u aplikací u znovupoužitelných *knihoven* (jako
-Pytest, PyQt5, Pyglet, Requests), ale podívejme se, jak na to.
+Spíš než u aplikací se to používá u znovupoužitelných *knihoven* (jako
+Pytest, PyQt5, Pyglet, Requests). Ale podívejme se, jak na to.
 
 Základ je vytvoření souboru `setup.py` s potřebnými informacemi.
 Začni s tímto, a jednotlivé informace si pozměň:
 
 ```python
+from pathlib import Path
 from setuptools import setup, find_packages
-
-with open('README') as f:
-    long_description = ''.join(f.readlines())
 
 setup(
     name='kalkulacka',
     version='0.1',
     description='A demo calculator',
-    long_description=long_description,
+    long_description=Path('README').read_text(),
     author='Petr Viktorin',
     author_email='encukou@gmail.com',
     license='GPLv3',
     url='https://github.com/encukou/kalkulacka',
-    packages=find_packages(),
+    packages=['kalkulacka'],
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
     zip_safe=False,
     package_data={
@@ -522,28 +531,34 @@ setup(
   Víš-li co je
   [ReStructured Text](https://en.wikipedia.org/wiki/ReStructuredText),
   použij to; jiné formáty zatím nejsou podporovány.
-* `author` a `author_email` říkají, kdo jsi
+* `author` a `author_email` říkají, kdo jsi a jak tě kontaktovat.
 * `license` říká, jak se tvůj program dá používat. Pokud ještě licenci
   nemáš, použij třeba [MIT](https://choosealicense.com/licenses/mit/):
   do souboru LICENSE dej text licence, a do `setup.py` dej `license='MIT',`.
-  Používáš-li PyQT5, musíš použít GPLv3, jako výše.
+  Používáš-li PyQT5, musíš použít `GPLv3` tak jak předepisuje licence samotného
+  PyQT5.
   Více k licencím viz [choosealicense.com](https://choosealicense.com).
 * URL říká, kde lze projekt najít. Máš-li kód na GitHubu, dej sem jeho URL.
+  Jestli kód programu zatím nikde nemáš, můžeš tento řádek zatím vynechat.
 * `packages` specifikuje, které Pythonní balíčky v modulu jsou.
-  Tady stačí říct řekneme nástrojům, ať použijí co najdou.
+  I když je setuptools umí najít automaticky, je lepší je explicitně uvést.
 * `classifiers` jsou štítky. Je fajn tady vyznačit verze Pythonu, se kterými
   balíček testuješ. Dají se použít i [jiné](https://pypi.python.org/pypi?%3Aaction=list_classifiers)
-  (pozor, pouze z tohoto seznamu!), ale upřímně, ty ostatní nejsou k ničemu.
-* `zip_safe=False` je tu z historických důvodů – vypíná to
+  (pozor, pouze z tohoto seznamu!), ale upřímně, ty ostatní se moc nepoužívají.
+* `zip_safe=False` je tu z historických důvodů – vypíná
   [překonanou technologii](http://peak.telecommunity.com/DevCenter/PythonEggs).
   Doporučuji použít.
 * `package_data` určuje, jaké soubory kromě těch Pythonních je třeba
   u jednotlivých modulů mít. Balíš-li hru, použiješ např `['*.png', '*.wav']`
   pro obrázky a zvuky.
 * `install_requires` je seznam závislostí – když dá uživatel
-  `pip install kalkulačka`, automaticky se nainstaluje i `PyQt5`.
+  `python -m pip install kalkulačka`, automaticky se nainstaluje i `PyQt5`.
   U her budeš nejspíš chtít `'pyglet'`.
-* `entry_points` XXX
+  Používáš-li `importlib_resources` (s podtržítkem), přidej i ten.
+* `entry_points` umožňují balíčku různými způsoby exportovat určité funkce.
+  Konkrétně `console_scripts` určuje příkazy, které budou po nainstalování
+  ve virtuálním prostředí k dispozici. Příkaz `kalkulacka` spustí funkci
+  `main` z modulu `kalkulacka`.
 
 Jak to budeš mít, postav z toho balíček:
 
@@ -553,15 +568,16 @@ $ python setup.py sdist
 
 V adresáři `dist/` se objeví soubor s názvem `kalkulacka-0.1.tar.gz`
 (případně s příponou `.zip`).
-To je on – soubor, který si kdokoliv s Pythonem nainstalovat!
+To je on – soubor, který si kdokoliv s Pythonem může nainstalovat!
 
 > [note]
 > Doporučuju před každým zavoláním `python setup.py sdist` adresář `dist`
-> smazat, pokud existuje. Nebudeou se v něm pak neválet staré soubory.
+> smazat, pokud existuje. Nebudou se v něm pak válet staré soubory.
 > (Je-li historie projektu v Gitu, tak staré „sdisty“ se dají kdykoli vytvořit
 > znovu.)
 
-XXX Přidat ``dist/` do `.gitignore`
+Používáš-li Git, dej si do souboru `.gitignore` řádek `/dist/`
+(viz lekce o ignorování souborů v Gitu).
 
 ### Lokální zkouška
 
@@ -585,7 +601,7 @@ Zkus si „sdist“ nainstalovat v izolovaném prostředí:
   ```
 
 Funguje-li to, gratuluji – takový balíček můžeš šířit mezi Pythonisty.
-(Zatím je pořád potřeba, aby uživatel měl už nainstalovaný Python.)
+Zatím je ale pořád potřeba, aby uživatel měl už nainstalovaný Python.
 
 
 ### Manifest a licence
@@ -593,20 +609,20 @@ Funguje-li to, gratuluji – takový balíček můžeš šířit mezi Pythonisty
 Většina licencí – včetně MIT i GPLv3 – říká, že když licencované dílo sdílím,
 musím licenci přiložit.
 To aktuálně náš „sdist“ nedělá.
-Pojďme zajistit, abychom to sdílení měli právně víc v pořádku.
+Pojďme zajistit, abychom to sdílení měli právně v pořádku.
 
-Pomocné soubory, které není potřeba instalovat, jako README a LICENSE,
-se vyjmenovat v souboru `MANIFEST.in`.
-(Ale ten README je speciální; `setup.py` ho začlení vždycky.)
+Pomocné soubory, které není potřeba instalovat, jako `LICENSE`,
+se dají vyjmenovat v souboru `MANIFEST.in`.
+(README je speciální; `setup.py` ho začlení vždycky.)
 Vytvoř `MANIFEST.in`, a napiš do něj:
 
 ```plain
-include LICENSE
+include LICENCE
 ```
 
 Pak vytvoř nový „sdist“.
 Umíš-li ho otevřít v archivovacím programu, můžeš zkontrolovat, že v něm
-LICENSE je.
+LICENCE je.
 
 
 ### Nahrání na PyPI
@@ -617,30 +633,50 @@ sekce "Upload na PyPI".
 
 ## AppInstaller
 
-XXX
+Zatím – s `pyz` i `sdist` – je potřeba, aby každý kdo tvoji aplikaci chce
+použít měl už nainstalovaný Python.
+
+To umí vyřešit program zvaný *PyInstaller*, který k tvé aplikaci přidá Python
+a závislosti (jako PyQt) a všechno 
+
+Příkaz:
 
 ```console
 $ python -m pip install pyinstaller
-$ pyinstaller __main__.py -n kalkulacka-app \
+$ pyinstaller kalkulacka/__main__.py -n kalkulacka-app \
     --exclude-module tkinter \
     --add-data kalkulacka:kalkulacka \
 ```
 
 Pozor, na Windows je `kalkulacka;kalkulacka` – středník místo dvojtečky!
 
-vytvoří adresář `kalkulacka-app`, a v něm spustitelný `kalkulacka-app`
+vytvoří adresář `dist/kalkulacka-app`, a v něm spustitelný `kalkulacka-app`
 nebo `kalkulacka-app.exe`.
-Ten funguje.
+Ten funguje (najdi si ho ve správci souborů a poklikej na něj).
+
 Jen potřebuje všechny ty soubory okolo.
 
-Vypadá-li všechno dobře, smaž celý adresář `dist`, a pusť `pyinstaller` znovu,
-tentokrát s přidanou volbou `-F`.
+PyInstaller ale umí všechno zabalit do jednoho souboru, který se při spuštění
+automaticky rozbalí. Má na to přepínač `-F`.
+Vypadá-li tedy všechno dobře, smaž celý adresář `dist`, a pusť `pyinstaller`
+znovu – jen na konec příkazu přidej ` -F`.
 
-XXX
+Na Windows a macOS to má ještě jednu mouchu: ukáže se příkazová řádka,
+kde se objevují výpisy z `print` nebo případné chybové hlášky.
+Jestli takové věci nepotřebuješ, přidej ještě volbu ` -w`.
 
-XXX Pak přidej ještě `-w` – na Win a macOS bude vidět rozdíl.
+Používáš-li Git, dej si do souboru `.gitignore` řádek `*.spec`
+(viz lekce o ignorování souborů v Gitu).
+Git tak bude ignorovat pomocný soubor `kalkulacka-app.spec`, který PyInstaller
+vytváří.
 
-XXX Přidat ``build/` a `*.spec` do `.gitignore`
+Teď máš spustitelný soubor, který můžeš dát kamarádovi který nemá nainstalovaný
+Python!
+Jen ten kamarád musí mít stejný systém jako ty: PyInstallerové balíčky
+vytvořené na Windows by měly fungovat na všech moderních Windows;
+ty z macOS jsou z pro macOS, a ty z Linuxu jsou pro Linux.
+
+
 
 ### XXX Testy
 
