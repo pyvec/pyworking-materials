@@ -1,7 +1,7 @@
-Workshop se koná:
+Workshop se konal:
 
-* 9. 12. 2017 v Apiary v Praze
-* 29. 6. 2019 na FI MUNI v Brně
+* 2017-12-09 v Apiary v Praze
+* 2019-06-29 na FI MUNI v Brně
 
 # GUI & Distribuce Pythonních aplikací
 
