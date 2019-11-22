@@ -6,6 +6,8 @@
 
 18.5.2019 se koná opět v Apiary v Karlíně, pro účastnice kurzů PyLadies.
 
+23.11.2019 se koná opět pro účastnice kurzů pražských PyLadies, tentokrát v Barclays na Pankráci.
+
 ## Co očekávat?
 
 Workshop pro ty, kdo umí Python zhruba na úrovni [začátečnického kurzu pro PyLadies](http://naucse.python.cz/course/pyladies/), ale z testování jsou spíše zmatení nebo o něm příliš nevědí.
@@ -20,7 +22,7 @@ Pokud zbude čas, můžeme se podívat i na další věci, například jak integ
 
 ## Co budeš potřebovat
 
-* Python 3.6 nebo 3.7
+* Python 3.6, 3.7 nebo 3.8
 * Git
 * Textový editor
 * Příkazovou řádku
