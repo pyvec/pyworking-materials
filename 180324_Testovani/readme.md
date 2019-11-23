@@ -1,4 +1,4 @@
-# Pyworking na téma Testování
+# Pyworking na téma Testování – pytest.jdem.cz
 
 24.3.2018 se koná Pyworking na téma Testování od Mira Hrončoka v Apiary v Karlíně.
 
