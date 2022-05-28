@@ -8,6 +8,8 @@
 
 23.11.2019 se koná opět pro účastnice kurzů pražských PyLadies, tentokrát v Barclays na Pankráci.
 
+Kde není uvedono jinak, jsou tyto materiály pod licencí [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.cs), můžete si s nimi tedy dělat prakticky cokoliv.
+
 ## Co očekávat?
 
 Workshop pro ty, kdo umí Python zhruba na úrovni [začátečnického kurzu pro PyLadies](http://naucse.python.cz/course/pyladies/), ale z testování jsou spíše zmatení nebo o něm příliš nevědí.
