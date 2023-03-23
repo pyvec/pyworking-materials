@@ -705,7 +705,7 @@ jobs:
     - name: Install pytest
       run:  python -m pip install -U pytest
     - name: Run tests
-      run:  ython -m pytest test_rps.py
+      run:  python -m pytest test_rps.py
 ```
 
 Po pushnutí by se na Githubu měl automaticky spustit test.
