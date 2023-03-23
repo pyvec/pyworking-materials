@@ -8,6 +8,8 @@
 
 23.11.2019 se koná opět pro účastnice kurzů pražských PyLadies, tentokrát v Barclays na Pankráci.
 
+25.3.2023 se po dlouzé pauze opět setkáváme.
+
 Kde není uvedono jinak, jsou tyto materiály pod licencí [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.cs), můžete si s nimi tedy dělat prakticky cokoliv.
 
 ## Co očekávat?
@@ -24,7 +26,7 @@ Pokud zbude čas, můžeme se podívat i na další věci, například jak integ
 
 ## Co budeš potřebovat
 
-* Python 3.6, 3.7 nebo 3.8
+* Python 3.6 nebo novější
 * Git
 * Textový editor
 * Příkazovou řádku
@@ -679,33 +681,36 @@ K tomu můžete použít různé automatizace, například nějakou službu, kte
 pull Request. Jenou z výhod takové služby je i to, že testy běží na jiném počítači,
 než tom vašem. Tím se odhalí mnoho problémů (například soubor, který jste zapomněli přidat do gitu).
 
-### Travis CI
+### GitHub Actions
 
 Jednou z takových služeb, kterým se říká *Continues Integration*, je
-[Travis CI]. Travis CI je zadarmo pro veřejné repozitáře.
+[GitHub Actions]. GitHub Actions je zadarmo pro veřejné repozitáře.
 
-Přihlaste se pomocí GitHubu (vpravo nahoře).
-Pak opět vpravo nahoře zvolte [Accounts](https://travis-ci.org/profile)
-a povolte Travis pro váš repozitář.
-
-Do repozitáře přidejte soubor `.travis.yml`:
+Přesvědčte se, že v *Settings → Actions* vašeho repozitáře jsou *Actions* povolené.
+Do repozitáře přidejte soubor `.github/workflows/main.yml`:
 
 ```yaml
-language: python
-dist: xenial
-python:
-- '3.7'
-install:
-- python -m pip install -U pytest
-script:
-- python -m pytest test_rps.py
+name: Test my project
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11
+    - name: Install pytest
+      run:  python -m pip install -U pytest
+    - name: Run tests
+      run:  ython -m pytest test_rps.py
 ```
 
-Po pushnutí by se na Travisu měl automaticky spustit test.
-Více informací o použití pro Python najdete
-v [dokumentaci](https://docs.travis-ci.com/user/languages/python/).
+Po pushnutí by se na Githubu měl automaticky spustit test.
 
 Proběhlé testy uvidíte na GitHubu v seznamu commitů.
 Když někdo pošle Pull Request, uvidíte, jestli testy procházejí, nebo ne.
 
-[Travis CI]: https://travis-ci.org/
+[GitHub Actions]: https://docs.github.com/en/actions
